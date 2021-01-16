@@ -12,6 +12,15 @@ object lists extends App{
   val k = readInt
   val kthmarks = obj.findkthele()
   println("The marks of the kth student are: " + kthmarks)
+  val stucount = obj.marks.length
+  println("The number of students are: " + stucount)
+  val reverselist = obj.findreverse()
+  println("The marks list in reverse order is: " + reverselist)
+  val ispalindrome = obj.check_palindrome()
+  if(ispalindrome == true)
+    println("The marks list is a palindrome!")
+  else
+    println("The marks list is not a palindrome!")
 }
 class listoperations {
   val marks: List[Int] = List(10,20,25,45,30)
@@ -21,12 +30,16 @@ class listoperations {
       marks
     }
   }
-    def findlast(): Int = marks.last
-    def findseclast(): Int = if(marks.isEmpty)
+  def findlast(): Int = marks.last
+  def findseclast(): Int = if(marks.isEmpty)
       throw new NoSuchElementException
     else
       marks.init.last
-    def findkthele():Int = if(marks.size <= k)
+  def findkthele():Int = if(marks.size <= k)
       throw new ArrayIndexOutOfBoundsException
     else marks(k)
+  def findreverse(): List[Int] = marks.reverse
+  def check_palindrome(): Boolean = if(lists.reverselist == marks)
+    return true
+    else return false
 }
