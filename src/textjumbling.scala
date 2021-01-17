@@ -1,5 +1,5 @@
 
-object Scramble {
+object textjumbling extends App{
   def scrambleWord(word: String) : String = {
     if(word.length <= 3)
       word
